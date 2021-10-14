@@ -1,4 +1,4 @@
-# Projet-Hackaton
+# Project-Hackaton
 #Welcom to this project HEPHAESTUS
 # Description 
 Hephaestus: is a forest fire prevention tool that serves the fire brigade by locating the different
