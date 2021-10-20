@@ -13,4 +13,4 @@ The gateway is the oneM2M middle-node server that will retrieve data from applic
 
 ## Steps of conception
 
-### 
+## 
