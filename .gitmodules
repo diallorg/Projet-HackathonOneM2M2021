@@ -1,3 +1,0 @@
-[submodule "fire-server"]
-	path = fire-server
-	url = git@github.com:Meerkath/fire-server.git
