@@ -17,7 +17,9 @@ before a fire ignites.
 - Adafruit_sensor-master
 ### Configuration
 Go to Arduino --> Preferences --> Enter in "URL de gestionnaire de carte" : https://arduino.esp8266.com/stable/package_esp8266com_index.json
+
 Go to Tools --> Type de carte --> Gestionnaire de carte --> Rechercher "ESP8266" --> Installer
+
 Selectionner dans Type de carte --> ESP8266 Boards --> NodeMCU 0.9
 ## Start
 Ouvrir le programme Arduino, remplacer les variables "ssid" et "password" par le ssid et le password du wifi sur lequel est hebergé le serveur mn-cse.
