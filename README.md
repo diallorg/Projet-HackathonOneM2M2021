@@ -33,7 +33,7 @@ Téléverser le programme sur l'ESP8266.
 ### Envoi des requêtes HTTP sur Middle-Node
 - Création de Content Instance dans "temperature" contenant la valeur acquise du capteur DHT11 concernant la temperature
 - Création de Content Instance dans "humidity" contenant la valeur acquise du capteur DHT11 concernant l'humidité
-- Création du Content Instance "FIRE" dans "flame-sensor" si la valeur acquise du capteur flame-sensor est inférieure à 400 soit à la présence d'une flamme aux environs de 40 cm du capteur.
+- Création du Content Instance "FIRE" dans "flame-sensor" si la valeur acquise du capteur flame-sensor est inférieure à 400 soit à la présence d'une flamme aux environs de 40 cm du capteur et déclenchement du buzzer.
 
 
 
