@@ -4,11 +4,14 @@
 Hephaestus: is a forest fire prevention tool that serves the fire brigade by locating the different
 areas of risk using temperature, wind, CO2, GPS, and humidity sensors, allowing the firemen to take action
 before a fire ignites.
+
+
 ## Components
 - NodeMCU ESP8266 V0.9
 - DHT11 (IDUINO MODULE SE052) -----> PIN D3 (GPIO 0)
 - Flame Sensor KY026 -----> PIN A0
 - Buzzer -----> PIN D6 (GPIO 12)
+![img](https://zupimages.net/up/21/45/d8of.png)
 ## Prérequis
 ### Arduino libraries
 - Timer-Master
