@@ -17,8 +17,6 @@
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <div id="fire" v-for="circle in fireCircles" :key="circle.id">
         <l-circle :lat-lng="circle.center" :radius=5 :color=purple></l-circle>
-        <l-circle :lat-lng="circle.center" :radius=60 :color=red></l-circle>
-        <l-circle :lat-lng="circle.center" :radius=80 :color=orange></l-circle>
       </div>
       <div id="prevent" v-for="circle in preventCircles" :key="circle.id">
         <l-circle :lat-lng="circle.center" :radius=circle.radius :color=circle.color></l-circle>
@@ -88,8 +86,6 @@ export default {
       zoom: 20,
       center: [43.61659243175874, 7.071922849252316],
       purple: 'purple',
-      red: 'red',
-      orange: 'orange',
       fireCircles:[],
       preventCircles: [],
       preventCirclesCache: [],
