@@ -19,11 +19,11 @@ router.post('/', function(req, res){
     let cnt = await Container.findOne({ri: pi});
     let ae = await ApplicationEntity.findOne({ri:cnt.pi});
     if(ae.lastFlame == "OFF" && con == "ON"){
+      console.log(`Fire detected on ${ae.name}.`);
       console.log("Sending text message.");
       spawn('python',["../sms-sending/senderSMS.py"]);
     }
     ae.lastFlame = con;
-    console.log(`Fire detected on ${ae.name}.`);
     ae.save();
   }
 });
