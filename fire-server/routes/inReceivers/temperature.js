@@ -15,7 +15,7 @@ router.post('/', function(req, res){
   saveToDB();
   async function saveToDB(){
     let cnt = await Container.findOne({ri: pi});
-    ApplicationEntity.findOneAndUpdate({ri:cnt.pi}, {lastWindSpeed: con},(err, ae)=>{
+    ApplicationEntity.findOneAndUpdate({ri:cnt.pi}, {lastTemperature: con},(err, ae)=>{
       if(err)
         console.error(error);
       else
