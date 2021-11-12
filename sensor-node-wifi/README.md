@@ -11,7 +11,7 @@ before a fire ignites.
 - DHT11 (IDUINO MODULE SE052) -----> PIN D3 (GPIO 0)
 - Flame Sensor KY026 -----> PIN A0
 - Buzzer -----> PIN D6 (GPIO 12)
-![img](https://zupimages.net/up/21/45/d8of.png)
+![img](https://zupimages.net/up/21/45/f0l3.png)
 ## Prérequis
 ### Arduino libraries
 - Timer-Master
