@@ -7,11 +7,18 @@
       <input type="checkbox" @change="showRoutes()" checked>
       <label for="">Show water sources</label>
       <input type="checkbox" @change="showHydrants()" checked>
+      <p>
+        <strong id="purple">✺</strong> is a fire,
+        <strong id="red">✺</strong> is a high risk area,
+        <strong id="orange">✺</strong> is a risk area.
+      </p>
     </div>
-    <l-map style="height: 98.4vh" :zoom="zoom" :center="center">
+    <l-map style="height: 91.8vh" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <div id="fire" v-for="circle in fireCircles" :key="circle.id">
-        <l-circle :lat-lng="circle.center" :radius=100 :color=circle.color></l-circle>
+        <l-circle :lat-lng="circle.center" :radius=5 :color=purple></l-circle>
+        <l-circle :lat-lng="circle.center" :radius=60 :color=red></l-circle>
+        <l-circle :lat-lng="circle.center" :radius=80 :color=orange></l-circle>
       </div>
       <div id="prevent" v-for="circle in preventCircles" :key="circle.id">
         <l-circle :lat-lng="circle.center" :radius=circle.radius :color=circle.color></l-circle>
@@ -32,6 +39,18 @@
   html{
     font-family: 'Noto Sans Mono', monospace;
     font-size: 0.8em;
+  }
+
+  #purple{
+    color: purple;
+  }
+
+  #red{
+    color: red;
+  }
+
+  #orange{
+    color: orange;
   }
 </style>
 
@@ -68,6 +87,9 @@ export default {
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 20,
       center: [43.61659243175874, 7.071922849252316],
+      purple: 'purple',
+      red: 'red',
+      orange: 'orange',
       fireCircles:[],
       preventCircles: [],
       preventCirclesCache: [],
@@ -92,12 +114,7 @@ export default {
         this.fireCircles = [];
         this.waypoints = [];
         response.data.forEach(data => {
-          let circle = {
-            id: data.id,
-            center: data.center,
-            color: 'red'
-          }
-          this.fireCircles.push(circle);
+          this.fireCircles.push(data);
 
           let route = [
             { lat: 43.628863292640425, lng: 7.044738173675914 },
