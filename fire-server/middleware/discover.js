@@ -38,8 +38,7 @@ async function discover(){
         continue
       aEName = aEData['m2m:ae'].rn;
       aERi = aEData['m2m:ae'].ri;
-      aELbl = aEData['m2m:ae'].lbl[0];
-      aEPos = aELbl.split(" ")[2].split("/")[1].split(",");
+      aEPos = aEData['m2m:ae'].lbl;
       let newAE = new ApplicationEntity({ri:aERi, name: aEName, pos: aEPos, mn:newMN.name, lastFlame: "OFF"});
       console.log(`Saving AE : ${newAE.name} in database.`);
       // save the AE in the database
