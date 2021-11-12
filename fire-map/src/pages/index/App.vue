@@ -11,7 +11,7 @@
     <l-map style="height: 98.4vh" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <div id="fire" v-for="circle in fireCircles" :key="circle.id">
-        <l-circle :lat-lng="circle.center" :radius=10 :color=circle.color></l-circle>
+        <l-circle :lat-lng="circle.center" :radius=100 :color=circle.color></l-circle>
       </div>
       <div id="prevent" v-for="circle in preventCircles" :key="circle.id">
         <l-circle :lat-lng="circle.center" :radius=circle.radius :color=circle.color></l-circle>
