@@ -125,7 +125,7 @@ export default {
         this.errors.push(e);
       });
 
-      setTimeout(this.getServerFiresValues, 10000);
+      setTimeout(this.getServerFireValues, 10000);
     },
 
     getServerPreventValues(){
@@ -164,8 +164,6 @@ export default {
       .catch(e => {
         this.errors.push(e);
       });
-
-      setTimeout(this.getServerHydrantsValues, 1000000);
     },
 
     showPrevent(){
