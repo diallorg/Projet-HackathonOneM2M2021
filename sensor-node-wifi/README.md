@@ -19,26 +19,26 @@ before a fire ignites.
 - DHT_Sensor_Library
 - Adafruit_sensor-master
 ### Configuration
-Go to Arduino --> Preferences --> Enter in "URL de gestionnaire de carte" : https://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Go to Tools --> Type de carte --> Gestionnaire de carte --> Rechercher "ESP8266" --> Installer
+Arduino --> Preferences --> Search for "Additional Boards Mager URLs" : https://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Selectionner dans Type de carte --> ESP8266 Boards --> NodeMCU 0.9
+Tools --> Board --> Board Manager --> Search for "ESP8266" --> Install
+
+Select in Board --> ESP8266 Boards --> NodeMCU 0.9 
 ## Start
-Ouvrir le programme Arduino, remplacer les variables "ssid" et "password" par le ssid et le password du wifi sur lequel est hebergé le serveur mn-cse.
-Téléverser le programme sur l'ESP8266.
-## What it does
-### Initialisation
-- Création de l'Application Entity
-- Création des Containers "temperature", "humidity", "flame-sensor"
-- Création du Content Instance "OFF" dans le container "flame-sensor"
-### Acquisition des valeurs des capteurs
-- DHT11 Humidité et Temperature
-- Flame Sensor
-### Envoi des requêtes HTTP sur Middle-Node
-- Création de Content Instance dans "temperature" contenant la valeur acquise du capteur DHT11 concernant la temperature
-- Création de Content Instance dans "humidity" contenant la valeur acquise du capteur DHT11 concernant l'humidité
-- Création du Content Instance "FIRE" dans "flame-sensor" si la valeur acquise du capteur flame-sensor est inférieure à 400 soit à la présence d'une flamme aux environs de 40 cm du capteur et déclenchement du buzzer.
 
+Run the sensorNodeWiFi code
 
+Open the file sensor-nodeV9.ino in the IDE
+In the code, replace the "ssid" and "password" variables with the ssid and the password of the wifi on which the mn-cse server is hosted. Upload the program to the ESP8266.
+Functionality of this code
+
+Creation of the Application Entity SensorNodeWifi on the Gateway
+Creation of "temperature", "humidity", "flame-sensor", "wind" containers
+Creation of the Content instances in the associated containers,
+Every 5 secondes , the code Retrieve values from the sensor-nodes : DHT11 Humidity and Temperature, Anemometer, Flame Sensor (used for detection & alarm)
+Sending the data values to Middle-Node
+Creation of the Content Instance in "temperature" containing the value retrieved from the DHT11 temperature sensor.
+Creation of the Content Instance in "humidity" containing the value retrieved from the DHT11 humidity sensor.
+Creation of the "FIRE" Content Instance in "flame-sensor" if the value retrieved from the flame-sensor is less than 400, ie a flame is detected under 40 cm away from the sensor, and triggering of the buzzer. (used for detection & alarm)
 
