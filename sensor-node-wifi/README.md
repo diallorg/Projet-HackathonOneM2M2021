@@ -12,7 +12,7 @@ before a fire ignites.
 - Flame Sensor KY026 -----> PIN A0
 - Buzzer -----> PIN D6 (GPIO 12)
 ![img](https://zupimages.net/up/21/45/f0l3.png)
-## Prérequis
+## Prerequisites 
 ### Arduino libraries
 - Timer-Master
 - Adafruit_ESP8266
