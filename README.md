@@ -12,33 +12,33 @@ before a fire ignites.
 - Flame Sensor KY026 -----> PIN A0
 - Buzzer -----> PIN D6 (GPIO 12)
 ![img](https://zupimages.net/up/21/45/d8of.png)
-## Prérequis
+## Prerequisites
 ### Arduino libraries
 - Timer-Master
 - Adafruit_ESP8266
 - DHT_Sensor_Library
 - Adafruit_sensor-master
 ### Configuration
-Go to Arduino --> Preferences --> Enter in "URL de gestionnaire de carte" : https://arduino.esp8266.com/stable/package_esp8266com_index.json
+Go to Arduino --> Preferences --> Enter in "Additional Boards Boards Manager URLs" : https://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Go to Tools --> Type de carte --> Gestionnaire de carte --> Rechercher "ESP8266" --> Installer
+Go to Tools --> Board --> Boards Manager --> Research "ESP8266" --> Install
 
-Selectionner dans Type de carte --> ESP8266 Boards --> NodeMCU 0.9
+Select in Board --> ESP8266 Boards --> NodeMCU 0.9
 ## Start
-Ouvrir le programme Arduino, remplacer les variables "ssid" et "password" par le ssid et le password du wifi sur lequel est hebergé le serveur mn-cse.
-Téléverser le programme sur l'ESP8266.
+Open the Arduino program and replace variables "ssid" and "password" by your wifi values 
+Download the program on the ESP8266.
 ## What it does
 ### Initialisation
-- Création de l'Application Entity
-- Création des Containers "temperature", "humidity", "flame-sensor"
-- Création du Content Instance "OFF" dans le container "flame-sensor"
+- Creation of the Application Entity
+- Creation of Containers "temperature", "humidity", "flame-sensor"
+- Creation of Content Instance "OFF" dans le container "flame-sensor"
 ### Acquisition des valeurs des capteurs
-- DHT11 Humidité et Temperature
+- DHT11 Humidity and Temperature
 - Flame Sensor
 ### Envoi des requêtes HTTP sur Middle-Node
-- Création de Content Instance dans "temperature" contenant la valeur acquise du capteur DHT11 concernant la temperature
-- Création de Content Instance dans "humidity" contenant la valeur acquise du capteur DHT11 concernant l'humidité
-- Création du Content Instance "FIRE" dans "flame-sensor" si la valeur acquise du capteur flame-sensor est inférieure à 400 soit à la présence d'une flamme aux environs de 40 cm du capteur et déclenchement du buzzer.
-
+- Creation of Content Instance in "temperature" container with the current value  of  DHT11 sensor
+- Same for humidity
+- Creation of Content Instance "FIRE" in "flame-sensor" container setting initialized to ON and setted to OFF if the collected value is less than  400
+- Emission of buzzer if flame is ON 
 
 
