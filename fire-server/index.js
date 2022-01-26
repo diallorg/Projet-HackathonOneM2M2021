@@ -19,6 +19,7 @@ app.use('/send/humidity', require('./routes/inReceivers/humidity'));
 app.use('/send/flame', require('./routes/inReceivers/flame'));
 app.use('/send/temperature', require('./routes/inReceivers/temperature'));
 app.use('/send/windSpeed', require('./routes/inReceivers/windSpeed'));
+app.use('/sensor-instance', require('./routes/sensorInstance'));
 app.get("/", (req,res) => {
   console.log("Received get request on root.");
   console.log(req);

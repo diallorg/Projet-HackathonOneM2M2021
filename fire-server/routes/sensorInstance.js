@@ -1,12 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const uuid = require('uuid');
-const Hydrant = require('../model/HydrantModel');
+const SensorInstance = require('../model/SensorInstanceModel');
 
 // Get all hydrants
-router.post('/', function(req, res) {
+router.post('/', (req, res) => {
   console.log(">>>>>>>>>> Receiving sensor instance.");
-  
+  const newSensorInstance = new SensorInstance(req.body.sensorInstance)
+  newSensorInstance.save((err, sensorInstance) => {
+    if (err) {throw new Error(err);}
+    res.send(sensorInstance);
+  })
 });
+
+router.get('/', (req, res) => {
+ SensorInstance.find({}, (err, sensorInstances) => {
+   if (err) {throw new Error(err);}
+   res.send(sensorInstances);
+ })
+})
 
 module.exports = router;
