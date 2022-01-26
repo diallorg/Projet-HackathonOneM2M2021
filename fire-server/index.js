@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const cors =  require('cors');
 const mongoose = require('mongoose');
-const discover = require('./middleware/discover');
-const subscribe = require('./middleware/subscribe');
+// const discover = require('./middleware/discover');
+// const subscribe = require('./middleware/subscribe');
 const config = require('./middleware/config')
 
 // Body Parser Middleware and Cors
@@ -31,12 +31,12 @@ async function main(){
   await mongoose.connect(config.mongoDBLink);
 
   // Discover MNs and AEs
-  await discover();
+  // await discover();
   app.listen(config.AEPort, function () {
     console.log(`Server started on port ${config.AEPort}.`);
   });
   
-  await subscribe();
+  // await subscribe();
   
 }
 
