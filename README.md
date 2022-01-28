@@ -7,3 +7,4 @@ before a fire ignites.
 
 Ian Ledig
 Alexandre Viale - Scrum Master
+Mamadou Galle diallo
