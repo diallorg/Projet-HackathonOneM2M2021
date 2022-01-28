@@ -6,3 +6,4 @@ areas of risk using temperature, wind, CO2, GPS, and humidity sensors, allowing 
 before a fire ignites.
 
 
+Ruby Pillar - Product owner 
