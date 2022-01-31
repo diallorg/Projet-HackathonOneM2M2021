@@ -1,0 +1,9 @@
+!SESSION 2018-11-13 19:53:16.436 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=arm, WS=gtk, NL=fr_FR
+Command-line arguments:  -console
+
+!ENTRY org.eclipse.osgi 4 0 2018-11-13 19:53:17.736
+!MESSAGE Bundle reference:file:pax-confman-propsloader-0.2.3.jar@1:start not found.
