@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const uuid = require('uuid');
 const Hydrant = require('../model/HydrantModel');
 
 // Get all hydrants
