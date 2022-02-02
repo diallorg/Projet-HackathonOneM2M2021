@@ -5,7 +5,8 @@ const SensorInstanceSchema = new mongoose.Schema({
   humidity: Number,
   windSpeed: Number,
   temperature: Number,
-  date: Date
+  date: Date,
+  fdi: Number
 });
 const SensorInstance = mongoose.model('sensorInstance', SensorInstanceSchema);
 

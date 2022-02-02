@@ -15,6 +15,8 @@ app.use(cors());
 app.use('/fires', require('./routes/fires'));
 app.use('/hydrants', require('./routes/hydrants'));
 app.use('/prevents', require('./routes/prevents'));
+app.use('/sensor-instances', require('./routes/sensorInstance'));
+// IN receivers
 app.use('/send/humidity', require('./routes/inReceivers/humidity'));
 app.use('/send/flame', require('./routes/inReceivers/flame'));
 app.use('/send/temperature', require('./routes/inReceivers/temperature'));
@@ -22,7 +24,7 @@ app.use('/send/windSpeed', require('./routes/inReceivers/windSpeed'));
 app.get("/", (req,res) => {
   console.log("Received get request on root.");
   console.log(req);
-  res.send('Welcome to fire server. This is the root. You can type /fires for fires /hydrants for hydrants and /prevents for prevents.'); 
+  res.send('Welcome to fire server. This is the root. You can type /fires for fires /hydrants for hydrants, /prevents for prevents and /sensor-instances for sensor instances.'); 
 })
 main();
 async function main(){
