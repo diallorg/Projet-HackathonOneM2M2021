@@ -1,14 +1,17 @@
 <template>
   <div>
-    
+    <chart width="800" height="400"/>
   </div>
 </template>
 
 <script>
 
+import axios from 'axios';
+import chart from './components/chart.vue'
+
 export default {
   components: {
-    
+    chart
   },
   data () {
     return {
