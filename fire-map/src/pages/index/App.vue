@@ -7,6 +7,7 @@
       <input type="checkbox" @change="showRoutes()" checked>
       <label for="">Show water sources</label>
       <input type="checkbox" @change="showHydrants()" checked>
+      <button onclick="window.location.href='/statistics';">Statistics</button>
       <p>
         <strong id="purple">✺</strong> is a fire,
         <strong id="red">✺</strong> is a high risk area,
