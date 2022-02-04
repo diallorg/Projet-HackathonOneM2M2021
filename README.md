@@ -9,3 +9,4 @@ before a fire ignites.
 - [Ruby Pillar](https://github.com/rubypillar) - Product Owner
 - [Alexandre Viale](https://github.com/Meerkath) - Scrum Master
 - [Ian Ledig](https://github.com/Pacito2)
+- [Axel Lemar](https://github.com/axellemar)
