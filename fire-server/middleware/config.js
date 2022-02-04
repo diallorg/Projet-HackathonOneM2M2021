@@ -1,3 +1,4 @@
+// Used to configurate your application for your needs
 const config = {
   AEIp: "",// ip of this app, Set 192 local ip
   AEPort: 4000, // port of this app

@@ -4,7 +4,7 @@ const SensorInstance = require('../model/SensorInstanceModel');
 
 router.get('/:sensorId', (req, res) => {
   SensorInstance.find({sensorId: req.params.sensorId},(err, sensorInstancesList)=>{
-    if(err) return res.statusCode(300);
+    if(err) return res.statusCode(500);
     if(!sensorInstancesList) return res.statusCode(404);
     res.send(sensorInstancesList);
   })

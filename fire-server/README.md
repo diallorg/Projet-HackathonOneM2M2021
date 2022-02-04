@@ -1,9 +1,7 @@
 # HEPHAESTUS PROJECT / Fire-server
 
 ## Description 
-Hephaestus: is a forest fire prevention tool that serves the fire brigade by locating the different
-areas of risk using temperature, wind, CO2, GPS and humidity sensors, allowing the firemen to take action
-before a fire ignites.
+This is a REST API that creates the relation between the middlenodes, the database and the fire-map.
 
 ## About this app
 Backend server developed in NodeJS with ExpressJS, the app establishes the relation between the front-end VueJS client server and the Infrastructure Node.
