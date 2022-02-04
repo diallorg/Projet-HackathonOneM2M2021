@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const SensorInstance = require('../model/SensorInstance');
+const SensorInstance = require('../model/SensorInstanceModel');
 
 // Get all sensor-instances
 router.get('/:sensorId', (req, res) => {

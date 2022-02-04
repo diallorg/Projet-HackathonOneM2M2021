@@ -33,12 +33,12 @@ async function main(){
   await mongoose.connect(config.mongoDBLink);
 
   // Discover MNs and AEs
-  await discover();
+  // await discover();
   app.listen(config.AEPort, function () {
     console.log(`Server started on port ${config.AEPort}.`);
   });
   
-  await subscribe();
+  // await subscribe();
   
 }
 
