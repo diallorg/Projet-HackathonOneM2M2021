@@ -1,32 +1,22 @@
-# fire-map
+# fire-map  
 
-Draw fire informations to map.
+## Install the interactive Map
+This application draws the different fire information onto the map by collecting data from the fire-server.  
 
-> :warning: You need to **start [fire-server](https://github.com/Meerkath/fire-server)** to use this.
+⚠️ You need to start a fire-server to use this.  
 
-## Project setup
-```
-npm install
-```
+## Download the fire map and install node modules
 
-### Bind to fire-server
+npm install  
 
-Edit the axios.get links in [index/App.vue](https://github.com/Meerkath/fire-map/blob/master/src/pages/index/App.vue) to match with fire-server.
+## Bind to fire-server
 
-### Compiles and hot-reloads for development
-```
+Edit the ip field of src/pages/index/App.vue to match with fire-server.
+
+// fire-map server ip  
+ip: http://localhost:4000,  
+
+## Compiles and hot-reloads for development
+
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Open a web browser and enter the IP used before.
