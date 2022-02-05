@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-      working-directory: ./fire-server
+    - working-directory: ./fire-server
       run: |
         npm i
         npm run start
