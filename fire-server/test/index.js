@@ -21,8 +21,9 @@ describe('Fire Server tests launched', function() {
     date = new Date();
   });
 
-  after(function() {
+  after(function(done) {
     console.log("Tests passed successfully");
+    done()
   });
 
   afterEach(function() {
