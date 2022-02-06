@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index",
     "dev": "nodemon index",
-    "test": "./node_modules/.bin/mocha test"
+    "test": "./node_modules/.bin/mocha test --exit"
   },
   "author": "",
   "license": "ISC",
