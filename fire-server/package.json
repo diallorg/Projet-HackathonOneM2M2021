@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index",
     "dev": "nodemon index",
+    "test": "./node_modules/.bin/mocha test",
     "pretest": "eslint"
   },
   "author": "",
@@ -13,6 +14,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mocha": "^9.2.0",
     "moment": "^2.29.1",
     "mongoose": "^6.0.12",
     "request": "^2.88.2",

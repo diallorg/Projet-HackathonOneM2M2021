@@ -20,4 +20,4 @@ jobs:
     - working-directory: ./fire-server
       run: |
         npm i
-        npm run start
+        npm run test
