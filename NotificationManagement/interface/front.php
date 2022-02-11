@@ -12,9 +12,17 @@
 <body>
     <h1><center>Number Phone</center></h1>
     <dialog id="mydialog" open>  
-		<div>
+        <form></form>
+            Phone No.:
+            <input type="tel" placeholder="Enter phone number" />
+        </form>
+        <div>
             <button class="boutons">Enregistrer</button>
-        </div> 
+        </div>
+        <br></br>
+        <textarea id="data" name="data" rows="5" cols="33">
+            
+        </textarea>
 	</dialog> 
 </body>
 </html>
