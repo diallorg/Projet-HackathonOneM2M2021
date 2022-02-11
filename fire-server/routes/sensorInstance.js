@@ -1,10 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const moment = require('moment');
+
 const SensorInstance = require('../model/SensorInstanceModel');
 
-router.get('/:sensorId', (req, res) => {
+router.get('/:sensorId', (req, res) => { 
   SensorInstance.find({sensorId: req.params.sensorId},(err, sensorInstancesList)=>{
     if(err) return res.statusCode(500);
+    if(req.body.toDate && req.body.fromDate) {
+      sensorInstancesList.filter( sensorInstance => {
+        console.log(sensorInstances.date, req.body.fromDate, req.body.toDate)
+        return moment(sensorInstance.date).isBetween(req.body.fromDate, req.body.toDate);
+      });
+    }
     if(!sensorInstancesList) return res.statusCode(404);
     res.send(sensorInstancesList);
   })
