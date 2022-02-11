@@ -1,6 +1,6 @@
 <template>
   <div>
-    <chart width="800" height="400" :data="sensorInstances" />
+    <chart :data="sensorInstances" />
   </div>
 </template>
 
@@ -48,9 +48,8 @@ export default {
   },
   methods:{
     getServerSensorInstanceValues(){
-      axios.get(this.ip + "/sensor-instance/1")
+      axios.get(this.ip + "/sensor-instances/1")
       .then(response => {
-
         this.sensorInstances = [];
 
         let labels = [];
@@ -61,10 +60,12 @@ export default {
 
         response.data.forEach(data => {
 
-          labels.push(data.date);
-          dataHumidity.push(data.humidity);
-          dataWind.push(data.windSpeed);
-          dataTemp.push(data.temperature);
+          if(data.date){
+            labels.push(data.date);
+            dataHumidity.push(data.humidity);
+            dataWind.push(data.windSpeed);
+            dataTemp.push(data.temperature);
+          }
         });
 
         datasets = [
@@ -87,11 +88,8 @@ export default {
             data: dataTemp
           }
         ]
-
-        this.sensorInstances = {labels: labels, datasets: datasets};
-      })
-      .catch(e => {
-        this.errors.push(e);
+        this.sensorInstances.labels = labels;
+        this.sensorInstances.datasets = datasets;
       });
 
       setTimeout(this.getServerSensorInstanceValues, 10000);
