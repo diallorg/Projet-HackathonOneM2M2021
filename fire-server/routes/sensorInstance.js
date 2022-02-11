@@ -8,8 +8,9 @@ router.get('/:sensorId', (req, res) => {
   SensorInstance.find({sensorId: req.params.sensorId},(err, sensorInstancesList)=>{
     if(err) return res.statusCode(500);
     if(req.body.toDate && req.body.fromDate) {
-      sensorInstancesList.filter( sensorInstance => {
-        console.log(sensorInstances.date, req.body.fromDate, req.body.toDate)
+      sensorInstancesList = sensorInstancesList.filter(sensorInstance => {
+        console.log(typeof req.body.fromDate, typeof sensorInstance.date.toString(), typeof req.body.toDate);
+        console.log(req.body.fromDate, sensorInstance.date.toString(), req.body.toDate);
         return moment(sensorInstance.date).isBetween(req.body.fromDate, req.body.toDate);
       });
     }
