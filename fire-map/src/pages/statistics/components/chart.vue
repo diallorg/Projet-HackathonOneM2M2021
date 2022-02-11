@@ -3,9 +3,11 @@ import { Line } from 'vue-chartjs'
 
 export default {
   extends: Line,
+  props: ['data', 'options'],
   mounted () {
     // Overwriting base render method with actual data.
-    this.renderChart({
+    this.renderChart(this.data, this.options
+      /*{
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       datasets: [
         {
@@ -27,7 +29,7 @@ export default {
           data: [2, 4, 8, 12, 10, 17, 20, 15, 52, 12, 12, 11]
         }
       ]
-    })
+    }*/)
   }
 }
 </script>
