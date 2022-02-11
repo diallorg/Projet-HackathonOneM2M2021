@@ -12,6 +12,8 @@
     padding: 10px; 
 } 
 dialog{ 
+    width: 80%;
+    height: 80%;
     border-radius: 10px; 
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); 
 } 
