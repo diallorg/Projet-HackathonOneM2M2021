@@ -1,4 +1,18 @@
 <?php
+    $liste_tel = "";
+    $telephone = "";
+    $telephone_err = "";
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Check if number phone is empty
+        if (empty(trim($_POST['telephone']))) {
+            $telephone_err = "Thanks to enter valid number phone";
+        } else {
+            $telephone = trim($_POST['telephone']);
+        }
+        if (empty($telephone_err)){
+            $liste_tel = $telephone;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,16 +28,17 @@
 <body>
     <h1><center>Number Phone</center></h1>
     <dialog id="mydialog" open>  
-        <form></form>
+        <form method="POST">
             Phone No.:
-            <input type="tel" placeholder="Enter phone number" />
+            <input type="tel" id="telephone" name="telephone" placeholder="Enter phone number" pattern="[0-9]{*}" />
+            <span class="help-block"><?= $telephone_err ?></span>
         </form>
         <div>
             <button class="boutons">Enregistrer</button>
         </div>
         <br></br>
         <textarea id="data" name="data" rows="5" cols="33">
-            
+            <?= $liste_tel ?>
         </textarea>
 	</dialog> 
 </body>
