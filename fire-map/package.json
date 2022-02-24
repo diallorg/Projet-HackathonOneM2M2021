@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "./node_modules/.bin/mocha test --exit"
   },
   "dependencies": {
     "axios": "^0.23.0",
@@ -13,6 +14,7 @@
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
     "leaflet-routing-machine": "^3.2.12",
+    "mocha": "^9.2.1",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
     "vue2-leaflet": "^2.7.1"
