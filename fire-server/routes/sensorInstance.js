@@ -5,6 +5,7 @@ const moment = require('moment');
 const SensorInstance = require('../model/SensorInstanceModel');
 
 router.get('/:sensorId', (req, res) => { 
+  console.log(req);
   SensorInstance.find({sensorId: req.params.sensorId},(err, sensorInstancesList)=>{
     if(err) return res.statusCode(500);
     if(req.body.toDate && req.body.fromDate) {
@@ -18,7 +19,6 @@ router.get('/:sensorId', (req, res) => {
 });
 
 router.post('/'), (req, res) => {
-
   let newSensorInstance = new SensorInstance(req.body.sensorInstance)
   newSensorInstance.fdi=2 * Math.pow(10, -0.45 + 0.987 * Math.log(5)-0.0345 * newSensorInstance.humidity + 0.0338 * newSensorInstance.temperature+ 0.0234 * newSensorInstance.windSpeed);
   newSensorInstance.save((err, insertedSensorInstance) => {
