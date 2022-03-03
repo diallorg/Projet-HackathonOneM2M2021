@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<style>
+  div{
+    max-width: 70%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+</style>
+
 <script>
 
 import axios from 'axios';
@@ -15,7 +24,7 @@ export default {
   },
   data () {
     return {
-      // fire-map server ip
+      // fire-statistics server ip
       ip: "http://localhost:4000",
       sensorInstances: [],
       test: {
