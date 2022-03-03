@@ -1,6 +1,6 @@
 <template>
   <div>
-    <chart  :data="sensorInstances" />
+    <chart v-if="dataRetrieves" :data="sensorInstances" />
   </div>
 </template>
 
@@ -8,14 +8,15 @@
   div{
     max-width: 70%;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
 
 <script>
 
 import axios from 'axios';
+import moment from 'moment';
 import chart from './components/chart.vue'
 
 export default {
@@ -27,29 +28,7 @@ export default {
       // fire-statistics server ip
       ip: "http://localhost:4000",
       sensorInstances: [],
-      test: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        datasets: [
-          {
-            label: 'Humidity',
-            borderColor: '#4FAFFF',
-            fill: false,
-            data: [60, 20, 12, 39, 10, 40, 39, 30, 40, 20, 12, 11]
-          },
-          {
-            label: 'Wind speed',
-            borderColor: '#00FF7F',
-            fill: false,
-            data: [12, 18, 25, 35, 48, 40, 39, 2, 40, 20, 12, 11]
-          },
-          {
-            label: 'Temperature',
-            borderColor: '#FFB03A',
-            fill: false,
-            data: [2, 4, 8, 12, 10, 17, 20, 15, 52, 12, 12, 11]
-          }
-        ]
-    }
+      dataRetrieves: false,
     };
   },
   mounted(){
@@ -67,7 +46,11 @@ export default {
         let dataTemp = [];
         response.data.forEach(data => {
           if(data.date){
-            labels.push(data.date);
+            let f = moment(data.date, "YYYY-MM-DD")
+                    .hour(data.date.substring(11, 13))
+                    .minute(data.date.substring(14, 16))
+                    .second(data.date.substring(17, 19));
+            labels.push(f.format('MM/DD/YYYY, h:mm:ss'));
             dataHumidity.push(data.humidity);
             dataWind.push(data.windSpeed);
             dataTemp.push(data.temperature);
@@ -93,8 +76,11 @@ export default {
             data: dataTemp
           }
         ]
-        this.sensorInstances.labels = labels;
+        this.sensorInstances.labels = labels.sort((a, b) => {
+          return new Date(a) - new Date(b);
+        });
         this.sensorInstances.datasets = datasets;
+        this.dataRetrieves = true;
       });
       setTimeout(this.getServerSensorInstanceValues, 10000);
     }
