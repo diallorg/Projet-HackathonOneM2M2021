@@ -50,8 +50,7 @@ export default {
                     .hour(data.date.substring(11, 13))
                     .minute(data.date.substring(14, 16))
                     .second(data.date.substring(17, 19));
-            labels.push(f.format('L') + " " + f.format('LTS'));
-            //console.log(data.date);
+            labels.push(f.format('MM/DD/YYYY, h:mm:ss'));
             dataHumidity.push(data.humidity);
             dataWind.push(data.windSpeed);
             dataTemp.push(data.temperature);
@@ -77,10 +76,11 @@ export default {
             data: dataTemp
           }
         ]
-        this.sensorInstances.labels = labels;
+        this.sensorInstances.labels = labels.sort((a, b) => {
+          return new Date(a) - new Date(b);
+        });
         this.sensorInstances.datasets = datasets;
         this.dataRetrieves = true;
-        console.log("Sending values")
       });
       setTimeout(this.getServerSensorInstanceValues, 10000);
     }

@@ -12,7 +12,6 @@ export default {
   mounted () {
     // Overwriting base render method with actual data.
     this.renderChart(this.data);
-    console.log("Rendering")
   }
 }
 </script>
