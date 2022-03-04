@@ -23,14 +23,9 @@ async function main(){
   console.log("Connecting to database.");
   await mongoose.connect(config.mongoDBLink);
 
-  // Discover MNs and AEs
-  // await discover();
   app.listen(config.AEPort, function () {
     console.log(`Server started on port ${config.AEPort}.`);
   });
-  
-  // await subscribe();
-  
 }
 
 
